@@ -6,8 +6,10 @@ library(grid);
 
 ## see https://stackoverflow.com/questions/22873602/importing-data-into-r-from-google-spreadsheet
 
-## load metadata from google spreadsheed
+## load metadata from google spreadsheet [for paper]
 data.tbl <- gsheet2tbl("docs.google.com/spreadsheets/d/1480qh5zNRN5ghm0qWisfcf6pCLoPs4xuzs5aMSeKg5Q");
+#### load metadata from google spreadsheet [for live version]
+##data.tbl <- gsheet2tbl("docs.google.com/spreadsheets/d/19Tl5Cv_SnQ4gA2zcGAMxmxqLz6lyGnSp0sG_r9h7z2E");
 
 ## custom cleaning of data
 data.tbl <- data.tbl[-1,]; # remove first line (very short run)
@@ -33,8 +35,8 @@ data.plots <- lapply(seq_len(ncol(data.tbl)), function(ci){
     plot.res;
  });
 
-##pdf("out_MUG.pdf", width=16, height=12);
-png("out_MUG.png", width=1600, height=1200);
+pdf("out_MUG.pdf", width=16, height=12);
+##png("out_MUG.png", width=1600, height=1200);
 ## Create matrix for plot output
 ## based on http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
 layout.mat <- matrix(seq(1,length(data.plots)), ncol=ceiling(sqrt(length(data.plots))));
