@@ -19,3 +19,7 @@ data.tbl <- gsheet2tbl("MYGSHEET");
 See the associated protocols.io page here:
 
 https://www.protocols.io/groups/minion-user-group-with-fungi-and-plants-on-their-mind
+
+And the paper preprint here:
+
+https://www.biorxiv.org/content/early/2018/03/27/289579
